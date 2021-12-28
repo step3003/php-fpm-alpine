@@ -1,4 +1,4 @@
-FROM php:8.1.0-fpm-alpine3.15 as php
+FROM php:8.1.1-fpm-alpine as php
 
 ARG UID=1000
 ARG GID=1000
@@ -54,7 +54,7 @@ RUN addgroup -S php -g $GID \
     && mkdir /app \
     && chown php:php /app
 
-COPY --from=composer:2.1.14 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.2 /usr/bin/composer /usr/bin/composer
 
 COPY php.ini /usr/local/etc/php/conf.d/
 COPY php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
