@@ -1,0 +1,16 @@
+{
+    "name": "tairau/php-fpm-alpine",
+    "authors": [
+        {
+            "name": "Viktar Tairau",
+            "email": "v@tairau.dev"
+        }
+    ],
+    "require": {
+        "ext-redis": "*",
+        "ext-pdo": "*",
+        "ext-gd": "*",
+        "ext-imagick": "*",
+        "phpunit/phpunit": "9.5.25"
+    }
+}

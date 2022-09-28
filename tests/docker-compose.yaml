@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: ../
+    volumes:
+    - .:/php/app
+    command: ./vendor/bin/phpunit .
+  
+  db:
+    image: postgres:14.5-alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+  
+  redis:
+    image: redis:7.0.5-alpine
