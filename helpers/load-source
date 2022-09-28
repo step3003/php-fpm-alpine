@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+mkdir -p /usr/src/php/ext/$1 &&
+curl -fsSL https://github.com/$2/archive/tags/$3.tar.gz | tar xvz -C /usr/src/php/ext/$1 --strip 1 &&
+echo "$1" >> /usr/src/php-available-exts
