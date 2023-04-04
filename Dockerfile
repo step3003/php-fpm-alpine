@@ -1,4 +1,4 @@
-FROM php:8.1.11-fpm-alpine3.16
+FROM php:8.2.4-fpm-alpine3.17
 
 ENV EXT_REDIS_VERSION=5.3.7
 ENV EXT_IGBINARY_VERSION=3.2.7
@@ -9,7 +9,7 @@ ARG USER=php
 ARG UID=1000
 ARG GID=1000
 
-RUN apk update && apk add --no-cache \
+RUN apk update && apk add --no-cache linux-headers \
     curl \
     libzip \
     libjpeg-turbo \
